@@ -349,6 +349,14 @@ isequal(LHS,RHS);
 %% Pg. 55, SCM-BCR
 %% Pg. 56, Decomposition into symmetric and anti-symmetric parts
 
+b = dec2bin(2^4-1:-1:0)-'0';
+b1 = b(:,1); b2 = b(:,2); b3 = b(:,3); b4 = b(:,4);
+
+f = b1 + 2*b1.*b2 - 4*b1.*b2.*b3 + 2*b1.*b2.*b3.*b4;
+
+f_sym = (1/2)*(f + (1 - f));
+f_anti = (1/2)*(f - (1 - f));
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 QUANTUM GADGETS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
